@@ -21,7 +21,7 @@ class AuthService
         $user["token"] = $token;
         return response()->json([
             "status" => true,
-            "message" =>"Welcome Back Again ",
+            "message" => " Welcome Back Again ",
             "data" => $user,
         ]);
 
