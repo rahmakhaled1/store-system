@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Dashboard\AuthController;
 use App\Http\Controllers\Dashboard\GovernorateController;
+use App\Http\Controllers\Dashboard\SettingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,14 @@ Route::group([
         Route::post("update_governorate",[GovernorateController::class, "update_governorate"]);
         Route::post("delete_governorate",[GovernorateController::class, "delete_governorate"]);
         /* End Governorate */
+
+        /* Start Setting */
+        Route::post("fetch_setting",[SettingController::class, "fetch_setting"]);
+        Route::post("store_setting",[SettingController::class, "store_setting"]);
+        Route::post("show_setting",[SettingController::class, "show_setting"]);
+        Route::post("update_setting",[SettingController::class, "update_setting"]);
+        Route::post("delete_setting",[SettingController::class, "delete_setting"]);
+        /* End Setting */
 
 });
 

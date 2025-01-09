@@ -8,6 +8,7 @@ use App\Http\Requests\Dashboard\Governorate\GovernorateRequest;
 use App\Http\Requests\Dashboard\Governorate\StoreGovernorateRequest;
 use App\Http\Requests\Dashboard\Governorate\UpdateGovernorateRequest;
 use App\Services\Governorate\GovernorateService;
+use App\Services\Governorate\SettingService;
 use Illuminate\Http\Request;
 
 class GovernorateController extends Controller
