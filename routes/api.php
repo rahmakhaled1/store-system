@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Dashboard\AuthController;
 use App\Http\Controllers\Dashboard\GovernorateController;
+use App\Http\Controllers\Dashboard\ProductController;
 use App\Http\Controllers\Dashboard\SettingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -38,6 +39,13 @@ Route::group([
         Route::post("delete_setting",[SettingController::class, "delete_setting"]);
         /* End Setting */
 
+        /* Start Product */
+        Route::post("fetch_product",[ProductController::class, "fetch_product"]);
+        Route::post("store_product",[ProductController::class, "store_product"]);
+        Route::post("show_product",[ProductController::class, "show_product"]);
+        Route::post("update_product",[ProductController::class, "update_product"]);
+        Route::post("delete_product",[ProductController::class, "delete_product"]);
+        /* End Product */
 });
 
 /* Start Login */

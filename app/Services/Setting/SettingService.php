@@ -2,7 +2,6 @@
 
 namespace App\Services\Setting;
 
-use App\Http\Requests\Dashboard\General\FetchRequest;
 use App\Http\Requests\Dashboard\Setting\SettingRequest;
 use App\Http\Requests\Dashboard\Setting\StoreSettingRequest;
 use App\Http\Requests\Dashboard\Setting\UpdateSettingRequest;
