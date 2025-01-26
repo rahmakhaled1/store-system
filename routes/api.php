@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+/* Start Login */
+Route::post("dashboard/v1/login",[AuthController::class, "login"])->name("login");
+/* End Login */
+
 //Admin Route
 Route::group([
     "prefix" => "dashboard/v1/",
@@ -48,6 +52,17 @@ Route::group([
         /* End Product */
 });
 
-/* Start Login */
-Route::post("dashboard/v1/login",[AuthController::class, "login"])->name("login");
-/* End Login */
+
+Route::group(
+    [
+        'prefix' => "website",
+    ],
+    function () {
+
+        /* start product*/
+        Route::controller(App\Http\Controllers\Website\ProductController::class)->group(function () {
+            Route::post("fetch_products", "fetch_products");
+            Route::post("show_product", "show_product");
+        });
+    });
+        /* end product */
