@@ -12,4 +12,9 @@ class Governorate extends Model
 
     protected $fillable = ["name"];
     protected $searchable = ["name"];
+
+    public function order()
+    {
+        return $this->hasMany(Order::class);
+    }
 }

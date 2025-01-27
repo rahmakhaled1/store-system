@@ -50,6 +50,14 @@ Route::group([
         Route::post("update_product",[ProductController::class, "update_product"]);
         Route::post("delete_product",[ProductController::class, "delete_product"]);
         /* End Product */
+
+
+        /* Start Order */
+        Route::post("fetch_orders",[\App\Http\Controllers\Dashboard\OrderController::class, "fetch_orders"]);
+        Route::post("show_order",[\App\Http\Controllers\Dashboard\OrderController::class, "show_order"]);
+        Route::post("delete_order",[\App\Http\Controllers\Dashboard\OrderController::class, "delete_order"]);
+        Route::post("change_order_status",[\App\Http\Controllers\Dashboard\OrderController::class, "change_order_status"]);
+        /* End Order */
 });
 
 
@@ -64,5 +72,14 @@ Route::group(
             Route::post("fetch_products", "fetch_products");
             Route::post("show_product", "show_product");
         });
-    });
         /* end product */
+
+
+        /* start order*/
+        Route::controller(App\Http\Controllers\Website\OrderController::class)->group(function () {
+            Route::post("store_order", "store_order");
+        });
+        /* end order */
+
+    });
+

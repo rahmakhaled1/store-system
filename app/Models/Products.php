@@ -24,4 +24,9 @@ class Products extends Model
             get: fn() => $this->image ? url("uploads/"."$this->image") : '',
      );
      }
+
+     public function orderItem()
+     {
+            return $this->hasMany(OrderItem::class);
+     }
 }
